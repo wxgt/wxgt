@@ -3,17 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>微信GT</title>
+  <title>控制台登录</title>
   <!-- 引入全局样式 -->
-  <link rel="stylesheet" href="../styles/main.css">
-
+  <link rel="stylesheet" href="styles/main.css">
   <!-- 引入控制台专用的CSS，放在最后确保样式覆盖 -->
-  <link rel="stylesheet" href="maina.css">
+  <link rel="stylesheet" href="control-panel.css">
   <!-- 添加网站图标 -->
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-  <!-- Header with Logo and Navigation -->
   <header>
     <div class="logo">
       <img src="/public/images/logo.png" alt="Logo">
@@ -27,99 +25,57 @@
     </nav>
   </header>
 
-  <!-- 横幅区域 -->
-  <div class="banner">
-    <img src="/public/images/wxgthf.png" alt="微信广告横幅">
-  </div>
-
-  <!-- Main Content -->
+  <!-- 控制台登录表单 -->
   <main>
-    <div class="card special-card">
-      <h3>微信GT群发工具</h3>
-      <ul>
-        <li><strong>精准采集，无限扩展：</strong> 通过手机号、WIFI、微信群多维度采集，让您的营销对象无所不在。</li>
-        <li><strong>强制推送，迅速触达：</strong> 突破微信社交壁垒，让您的信息精准抵达每一位目标用户。</li>
-        <li><strong>自动添加，轻松互动：</strong> 自动添加好友，无需操作，一键扩展社交网络，提升互动效率。</li>
-        <li><strong>自带海量微信库存：</strong> 解决会员微信封禁的烦恼，让您的微信营销更简单、更高效！</li>
-      </ul>
+    <div class="login-container">
+      <div class="login-card">
+        <h2>控制台登录</h2>
+        <form id="loginForm" action="#" method="POST" onsubmit="return handleLogin(event)">
+          <div class="form-group">
+            <label for="username">用户名</label>
+            <input type="text" id="username" name="username" placeholder="请输入用户名" required>
+          </div>
+          <div class="form-group">
+            <label for="password">密码</label>
+            <input type="password" id="password" name="password" placeholder="请输入密码" required>
+          </div>
+          <div id="loadingMessage" class="loading-message"></div>
+          <div id="errorMessage" class="error-message" style="display: none;">用户名或密码错误</div>
+          <div class="form-group">
+            <button type="submit" class="btn-submit">登录</button>
+          </div>
+        </form>
+      </div>
     </div>
-
-    <div class="card download-card">
-      <h3>下载工具</h3>
-      <a href="/src/downloads/tool-v1.61.exe" class="download-btn" download>立即下载</a>
-      <p class="version-info">windows 版本号：V1.61</p>
-      <p class="update-date">更新日期：2024.12.3</p>
-      <h4>此次更新介绍</h4>
-      <ul class="update-list">
-        <li>功能修复</li>
-        <li>WiFi定位位置功能修复</li>
-        <li>修复账号登录失效没有显示的问题</li>
-        <li>修复内部问题</li>
-      </ul>
-    </div>
-
-    <div class="card new-card">
-  <h3>新的功能亮点</h3>
-  
-  
- </div>
-
-    <!-- 工具亮点卡片介绍 -->
-    <section class="features">
-      <div class="card">
-        <a href="feature1.html">
-          <h3>突破性消息传达</h3>
-          <p>能够实现与未添加好友的用户进行主动会话，打破微信平台的社交限制</p>
-        </a>
-      </div>
-    
-      <div class="card">
-        <a href="feature2.html">
-          <h3>强大的后端支持</h3>
-        <p>借助云计算和分布式计算架构，操作的快速响应解决规模群发中的性能问题</p>
-        </a>
-      </div>
-    
-      <div class="card">
-        <a href="feature3.html">
-          <h3>自动化与简便操作</h3>
-          <p>从提交到消息发送，所有操作均自动化完成，用户无需干预，降低操作门槛</p>
-        </a>
-      </div>
-    
-      <div class="card">
-        <a href="feature4.html">
-          <h3>先进的微信资源库</h3>
-          <p>通过多账户模拟与行为仿真技术，绕过微信防护层，避免封号风险，确保消息稳定送达</p>
-        </a>
-      </div>
-    
-      <div class="card">
-        <a href="feature5.html">
-          <h3>Verto-Mine协议（VMP）</h3>
-          <p>基于VMP协议强制广告推送（Force Ad Push）技术而产生的衍生工具</p>
-        </a>
-      </div>
-    
-      <div class="card">
-        <a href="feature6.html">
-          <h3>匿名操作</h3>
-          <p>分布式账户管理系统，我们保证所有用户操作不被追踪，避免因过度集中操作而导致的安全风险</p>
-        </a>
-      </div>
-    </section>
-    <!-- 新增的按钮 -->
-    <div class="center-button">
-      <a href="control-panel.html" class="control-btn">进入控制台</a>
-    </div>
-  </main>
-
   </main>
 
   <footer>
     <p>&copy; 2024 微信GT群发工具 - Verto-Mine</p>
   </footer>
 
+  <script>
+    // 登录按钮点击后执行的函数
+    function handleLogin(event) {
+      event.preventDefault(); // 阻止默认的表单提交
+
+      // 获取表单元素
+      const loadingMessage = document.getElementById('loadingMessage');
+      const errorMessage = document.getElementById('errorMessage');
+      const form = document.getElementById('loginForm');
+
+     
+      loadingMessage.innerHTML = "验证中...";
+      loadingMessage.style.display = "block";
+      errorMessage.style.display = "none"; // 清除之前的错误提示
+
+      setTimeout(function() {
+        
+        loadingMessage.style.display = "none";
+        
+        errorMessage.style.display = "block";
+      }, 2000);
+    }
+  </script>
   <style>
     /* 设置页面背景色为深色 */
     body {
