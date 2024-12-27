@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>微信GT</title>
+  <!-- 引入全局样式 -->
+  <link rel="stylesheet" href="../styles/main.css">
+
+  <!-- 引入控制台专用的CSS，放在最后确保样式覆盖 -->
+  <link rel="stylesheet" href="maina.css">
+  <!-- 添加网站图标 -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <!-- Header with Logo and Navigation -->
+  <header>
+    <div class="logo">
+      <img src="/public/images/logo.png" alt="Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">微信GT</a></li>
+        <li><a href="account.html">账户交易</a></li>
+        <li><a href="https://t.me/verto_GTZ">客服</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 横幅区域 -->
+  <div class="banner">
+    <img src="/public/images/wxgthf.png" alt="微信广告横幅">
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <div class="card special-card">
+      <h3>微信GT群发工具</h3>
+      <ul>
+        <li><strong>精准采集，无限扩展：</strong> 通过手机号、WIFI、微信群多维度采集，让您的营销对象无所不在。</li>
+        <li><strong>强制推送，迅速触达：</strong> 突破微信社交壁垒，让您的信息精准抵达每一位目标用户。</li>
+        <li><strong>自动添加，轻松互动：</strong> 自动添加好友，无需操作，一键扩展社交网络，提升互动效率。</li>
+        <li><strong>自带海量微信库存：</strong> 解决会员微信封禁的烦恼，让您的微信营销更简单、更高效！</li>
+      </ul>
+    </div>
+
+    <div class="card download-card">
+      <h3>下载工具</h3>
+      <a href="/src/downloads/tool-v1.61.exe" class="download-btn" download>立即下载</a>
+      <p class="version-info">windows 版本号：V1.61</p>
+      <p class="update-date">更新日期：2024.12.3</p>
+      <h4>此次更新介绍</h4>
+      <ul class="update-list">
+        <li>功能修复</li>
+        <li>WiFi定位位置功能修复</li>
+        <li>修复账号登录失效没有显示的问题</li>
+        <li>修复内部问题</li>
+      </ul>
+    </div>
+
+    <div class="card new-card">
+  <h3>新的功能亮点</h3>
+  
+  
+ </div>
+
+    <!-- 工具亮点卡片介绍 -->
+    <section class="features">
+      <div class="card">
+        <a href="feature1.html">
+          <h3>突破性消息传达</h3>
+          <p>能够实现与未添加好友的用户进行主动会话，打破微信平台的社交限制</p>
+        </a>
+      </div>
+    
+      <div class="card">
+        <a href="feature2.html">
+          <h3>强大的后端支持</h3>
+        <p>借助云计算和分布式计算架构，操作的快速响应解决规模群发中的性能问题</p>
+        </a>
+      </div>
+    
+      <div class="card">
+        <a href="feature3.html">
+          <h3>自动化与简便操作</h3>
+          <p>从提交到消息发送，所有操作均自动化完成，用户无需干预，降低操作门槛</p>
+        </a>
+      </div>
+    
+      <div class="card">
+        <a href="feature4.html">
+          <h3>先进的微信资源库</h3>
+          <p>通过多账户模拟与行为仿真技术，绕过微信防护层，避免封号风险，确保消息稳定送达</p>
+        </a>
+      </div>
+    
+      <div class="card">
+        <a href="feature5.html">
+          <h3>Verto-Mine协议（VMP）</h3>
+          <p>基于VMP协议强制广告推送（Force Ad Push）技术而产生的衍生工具</p>
+        </a>
+      </div>
+    
+      <div class="card">
+        <a href="feature6.html">
+          <h3>匿名操作</h3>
+          <p>分布式账户管理系统，我们保证所有用户操作不被追踪，避免因过度集中操作而导致的安全风险</p>
+        </a>
+      </div>
+    </section>
+    <!-- 新增的按钮 -->
+    <div class="center-button">
+      <a href="control-panel.html" class="control-btn">进入控制台</a>
+    </div>
+  </main>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2024 微信GT群发工具 - Verto-Mine</p>
+  </footer>
+
+  <style>
+    /* 设置页面背景色为深色 */
+    body {
+      margin: 0;
+      background-color: #1e1e1e; /* 页面背景颜色 */
+    
+      height: 100vh; /* 确保页面的高度填满整个视口 */
+    }
+
+    /* 粒子效果容器 */
+    #particles-js {
+      position: fixed; /* 粒子效果固定在页面 */
+      top: 0;
+      left: 0;
+      width: 100%; /* 宽度填满整个屏幕 */
+      height: 100%; /* 高度填满整个屏幕 */
+      z-index: -1; /* 确保粒子效果位于其他元素的下方 */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 粒子背景 -->
+  <div id="particles-js"></div>
+
+  <!-- 引入粒子效果的JS -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <!-- 配置粒子效果 -->
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: {
+          value: 80, /* 粒子数量 */
+          density: {
+            enable: true,
+            value_area: 800
+          }
+        },
+        color: {
+          value: "#808080" /* 设置粒子颜色为灰色 */
+        },
+        shape: {
+          type: "circle", /* 粒子形状 */
+          stroke: {
+            width: 0,
+            color: "#fff"
+          },
+        },
+        opacity: {
+          value: 1, /* 粒子透明度 */
+          random: false,
+          anim: {
+            enable: true,
+            speed: 1,
+            opacity_min: 0.1,
+            sync: false
+          }
+        },
+        size: {
+          value: 8, /* 粒子大小 */
+          random: true
+        },
+        line_linked: {
+          enable: true,
+          distance: 150, /* 连接粒子的距离 */
+          color: "#808080", /* 连接线颜色 */
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 5, /* 粒子移动速度 */
+          direction: "none",
+          random: false,
+          straight: false,
+          out_mode: "out", /* 粒子出界后重新出现 */
+          bounce: false
+        }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: {
+            enable: true,
+            mode: "grab" /* 鼠标悬停时粒子抓取 */
+          },
+          onclick: {
+            enable: true,
+            mode: "push" /* 鼠标点击时增加粒子 */
+          },
+          resize: true
+        },
+        modes: {
+          grab: {
+            distance: 140,
+            line_linked: {
+              opacity: 1
+            }
+          },
+          bubble: {
+            distance: 400,
+            size: 40,
+            duration: 2,
+            opacity: 8,
+            speed: 3
+          },
+          repulse: {
+            distance: 200,
+            duration: 0.4
+          },
+          push: {
+            particles_nb: 4
+          },
+          remove: {
+            particles_nb: 2
+          }
+        }
+      },
+      retina_detect: true,
+      background: {
+        color: "#1e1e1e" /* 设置粒子背景颜色与网站一致 */
+      }
+    });
+  </script>
+</body>
+</html>
