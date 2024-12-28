@@ -4,17 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>控制台登录</title>
-  <!-- 引入全局样式 -->
   <link rel="stylesheet" href="styles/main.css">
-  <!-- 引入控制台专用的CSS，放在最后确保样式覆盖 -->
   <link rel="stylesheet" href="control-panel.css">
-  <!-- 添加网站图标 -->
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
   <header>
     <div class="logo">
-      <img src="/public/images/logo.png" alt="Logo">
+      <img src="images/logo.png" alt="Logo">
     </div>
     <nav>
       <ul>
@@ -25,7 +22,6 @@
     </nav>
   </header>
 
-  <!-- 控制台登录表单 -->
   <main>
     <div class="login-container">
       <div class="login-card">
@@ -58,148 +54,28 @@
     function handleLogin(event) {
       event.preventDefault(); // 阻止默认的表单提交
 
-      // 获取表单元素
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
       const loadingMessage = document.getElementById('loadingMessage');
       const errorMessage = document.getElementById('errorMessage');
-      const form = document.getElementById('loginForm');
 
-     
       loadingMessage.innerHTML = "验证中...";
       loadingMessage.style.display = "block";
       errorMessage.style.display = "none"; // 清除之前的错误提示
 
-      setTimeout(function() {
-        
-        loadingMessage.style.display = "none";
-        
-        errorMessage.style.display = "block";
-      }, 2000);
-    }
-  </script>
-  <style>
-    /* 设置页面背景色为深色 */
-    body {
-      margin: 0;
-      background-color: #1e1e1e; /* 页面背景颜色 */
-    
-      height: 100vh; /* 确保页面的高度填满整个视口 */
-    }
-
-    /* 粒子效果容器 */
-    #particles-js {
-      position: fixed; /* 粒子效果固定在页面 */
-      top: 0;
-      left: 0;
-      width: 100%; /* 宽度填满整个屏幕 */
-      height: 100%; /* 高度填满整个屏幕 */
-      z-index: -1; /* 确保粒子效果位于其他元素的下方 */
-    }
-  </style>
-</head>
-<body>
-
-  <!-- 粒子背景 -->
-  <div id="particles-js"></div>
-
-  <!-- 引入粒子效果的JS -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
-  <!-- 配置粒子效果 -->
-  <script>
-    particlesJS("particles-js", {
-      particles: {
-        number: {
-          value: 80, /* 粒子数量 */
-          density: {
-            enable: true,
-            value_area: 800
-          }
-        },
-        color: {
-          value: "#808080" /* 设置粒子颜色为灰色 */
-        },
-        shape: {
-          type: "circle", /* 粒子形状 */
-          stroke: {
-            width: 0,
-            color: "#fff"
-          },
-        },
-        opacity: {
-          value: 1, /* 粒子透明度 */
-          random: false,
-          anim: {
-            enable: true,
-            speed: 1,
-            opacity_min: 0.1,
-            sync: false
-          }
-        },
-        size: {
-          value: 8, /* 粒子大小 */
-          random: true
-        },
-        line_linked: {
-          enable: true,
-          distance: 150, /* 连接粒子的距离 */
-          color: "#808080", /* 连接线颜色 */
-          opacity: 0.4,
-          width: 1
-        },
-        move: {
-          enable: true,
-          speed: 5, /* 粒子移动速度 */
-          direction: "none",
-          random: false,
-          straight: false,
-          out_mode: "out", /* 粒子出界后重新出现 */
-          bounce: false
-        }
-      },
-      interactivity: {
-        detect_on: "canvas",
-        events: {
-          onhover: {
-            enable: true,
-            mode: "grab" /* 鼠标悬停时粒子抓取 */
-          },
-          onclick: {
-            enable: true,
-            mode: "push" /* 鼠标点击时增加粒子 */
-          },
-          resize: true
-        },
-        modes: {
-          grab: {
-            distance: 140,
-            line_linked: {
-              opacity: 1
-            }
-          },
-          bubble: {
-            distance: 400,
-            size: 40,
-            duration: 2,
-            opacity: 8,
-            speed: 3
-          },
-          repulse: {
-            distance: 200,
-            duration: 0.4
-          },
-          push: {
-            particles_nb: 4
-          },
-          remove: {
-            particles_nb: 2
-          }
-        }
-      },
-      retina_detect: true,
-      background: {
-        color: "#1e1e1e" /* 设置粒子背景颜色与网站一致 */
+      // 验证用户名和密码
+      if (username === "wxgt2003" && password === "Aa123456") {
+        setTimeout(function() {
+          loadingMessage.style.display = "none";
+          window.location.href = "dashboard.html"; // 登录成功后跳转到后台控制台页面
+        }, 2000); // 模拟2秒的加载时间
+      } else {
+        setTimeout(function() {
+          loadingMessage.style.display = "none";
+          errorMessage.style.display = "block"; // 显示错误提示
+        }, 2000);
       }
-    });
+    }
   </script>
 </body>
 </html>

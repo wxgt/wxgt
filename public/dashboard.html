@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>控制台后台</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="control-panel.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">微信GT</a></li>
+        <li><a href="account.html">账户交易</a></li>
+        <li><a href="https://t.me/verto_GTZ">客服</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="main-container">
+    <!-- 左侧导航栏 -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h3>控制台</h3>
+      </div>
+      <ul class="nav-links">
+        <li><a href="javascript:void(0)" class="active" onclick="showSection('user-info')">用户信息</a></li>
+        <li><a href="javascript:void(0)" onclick="showSection('subscription')">订阅续费</a></li>
+        <li><a href="javascript:void(0)" onclick="showSection('my-invite')">我的邀请</a></li>
+        <li><a href="javascript:void(0)" onclick="showSection('collect-records')">采集记录</a></li>
+        <li><a href="javascript:void(0)" onclick="showSection('messages')">信息</a></li>
+        <li><a href="javascript:void(0)" onclick="showSection('logout')">退出登录</a></li>
+      </ul>
+      <div class="notice">
+        <p>注意事項:</p>
+        <p>該網站所有操作邏輯都是提前設定好的，如有設置不當造成帳號封禁，騷擾他人等不承擔法律責任並享有最終解釋權</p>
+        <p>僅提供給自動化測試人員，需要大量重複操作的用戶，如有灰黑產業等違反法律條款的使用人員，將有權停止使用並封禁</p>
+      </div>
+    </aside>
+
+    <!-- 右侧内容区域 -->
+    <main class="content-area">
+      <!-- 用户信息 -->
+      <section id="user-info" class="section">
+        <h2>用户信息</h2>
+        <div class="user-info-card">
+          <div class="info-item">
+            <label>用户名:</label>
+            <p><strong>wxgt2003</strong></p>
+          </div>
+          <div class="info-item">
+            <label>会员权限到期天数:</label>
+            <p><strong>330天</strong></p>
+          </div>
+          <div class="info-item">
+            <label>会员等级:</label>
+            <p><strong>年费会员</strong></p>
+          </div>
+        </div>
+
+        <div class="password-change">
+          <h3>修改密码</h3>
+          <form id="change-password-form" class="form-group">
+            <div class="input-group">
+              <label for="current-password">当前密码</label>
+              <input type="password" id="current-password" name="current-password" placeholder="请输入当前密码" required>
+            </div>
+            <div class="input-group">
+              <label for="new-password">新密码</label>
+              <input type="password" id="new-password" name="new-password" placeholder="请输入新密码" required>
+            </div>
+            <div class="input-group">
+              <label for="confirm-password">确认密码</label>
+              <input type="password" id="confirm-password" name="confirm-password" placeholder="请确认新密码" required>
+            </div>
+            <button type="submit" class="btn-submit">提交</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- 订阅续费 -->
+      <section id="subscription" class="section" style="display: none;">
+        <h2>订阅续费</h2>
+        <div class="card">
+          <h3>季度订阅</h3>
+          <p>价格：999 USDT</p>
+          <p>使用期限：3个月</p>
+          <button class="btn-submit">立即支付</button>
+        </div>
+        <div class="card">
+          <h3>年度订阅</h3>
+          <p>价格：2999 USDT</p>
+          <p>使用期限：12个月</p>
+          <button class="btn-submit">立即支付</button>
+        </div>
+      </section>
+
+      <!-- 我的邀请 -->
+      <section id="my-invite" class="section" style="display: none;">
+        <h2>我的邀请</h2>
+        <div class="invite-description">
+          <p>分销佣金可抵扣续费金额，佣金为单笔订单的5%</p>
+          <p>已关闭邀请功能</p>
+        </div>
+        <div class="invite-record">
+          <h3>邀请记录</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>用户名</th>
+                <th>佣金</th>
+                <th>状态</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>wxgt2003</td>
+                <td>0</td>
+                <td>已结算</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 采集记录 -->
+      <section id="collect-records" class="section" style="display: none;">
+        <h2>采集记录</h2>
+        <div class="record-list">
+          <div class="record-item">
+            <span class="date">2024-12-25</span>
+            <span class="file-name">wxgt_1234567890.txt</span>
+            <button class="btn-download">下载</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 信息 -->
+      <section id="messages" class="section" style="display: none;">
+        <h2>收到的微信回复</h2>
+        <table class="message-table">
+          <thead>
+            <tr>
+              <th>日期</th>
+              <th>收到的回复</th>
+              <th>回复</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2024-12-25</td>
+              <td>这是什么</td>
+              <td>
+                <input type="text" placeholder="请输入回复内容">
+                <button class="btn-reply">回复</button>
+                <span class="reply-status" style="display:none;">已回复</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 退出登录 -->
+      <section id="logout" class="section" style="display: none;">
+        <button class="btn-logout">退出登录</button>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 微信GT群发工具 - Verto-Mine</p>
+  </footer>
+
+  <script>
+    // 初始显示用户信息模块
+    window.onload = function() {
+      showSection('user-info');
+    }
+
+    // 切换显示内容
+    function showSection(sectionId) {
+      // 隐藏所有section
+      let sections = document.querySelectorAll('.section');
+      sections.forEach(function(section) {
+        section.style.display = 'none';
+      });
+
+      // 移除左侧导航栏的所有活动状态
+      let navLinks = document.querySelectorAll('.nav-links a');
+      navLinks.forEach(function(link) {
+        link.classList.remove('active');
+      });
+
+      // 显示当前选中的section
+      document.getElementById(sectionId).style.display = 'block';
+
+      // 激活当前选中的导航栏
+      let activeLink = document.querySelector(`.nav-links a[href="javascript:void(0)"][onclick="showSection('${sectionId}')"]`);
+      activeLink.classList.add('active');
+    }
+
+    // 处理修改密码的提交
+    document.getElementById("change-password-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      alert("密码已成功修改！");
+    });
+
+    // 处理回复按钮点击事件
+    document.querySelectorAll('.btn-reply').forEach(function(button) {
+      button.addEventListener('click', function() {
+        const replyStatus = this.parentNode.querySelector('.reply-status');
+        replyStatus.style.display = 'inline';
+        this.style.display = 'none';
+      });
+    });
+  </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: #fff;
+      margin: 0;
+    }
+
+    .main-container {
+      display: flex;
+      height: 100vh;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #333;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .sidebar-header h3 {
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .nav-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .nav-links li {
+      margin-bottom: 15px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #00bcd4;
+    }
+
+    .content-area {
+      flex-grow: 1;
+      padding: 20px;
+      background-color: #2a2a2a;
+    }
+
+    .section {
+      display: none;
+    }
+
+    .info-item {
+      margin-bottom: 20px;
+    }
+
+    .info-item label {
+      font-weight: bold;
+    }
+
+    .password-change {
+      margin-top: 30px;
+    }
+
+    .input-group {
+      margin-bottom: 10px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      background-color: #444;
+      color: #fff;
+      border: 1px solid #555;
+      border-radius: 5px;
+    }
+
+    .btn-submit {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn-submit:hover {
+      background-color: #45a049;
+    }
+
+    .btn-reply {
+      background-color: #008CBA;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn-reply:hover {
+      background-color: #007B9A;
+    }
+
+    .btn-logout {
+      background-color: #f44336;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn-logout:hover {
+      background-color: #e53935;
+    }
+
+    .invite-description,
+    .invite-record {
+      margin-top: 20px;
+    }
+
+    .message-table th,
+    .message-table td {
+      padding: 10px;
+      border: 1px solid #555;
+    }
+
+    .message-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+  </style>
+</body>
+</html>
